@@ -1,0 +1,91 @@
+:root {
+  --darkColor: #121212;
+  --lightColor:rgb(255, 255, 255);
+  --hoverOrange:  #cb6e22;
+  
+}
+
+a {
+  color: inherit;
+}
+a,details,ul,li,summary{
+  text-decoration: none;
+  list-style: none;
+}
+ul{
+  padding: 0;
+}
+summary{
+  display: list-item; /* Ensures the summary element behaves like a list item */
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+button{
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+/* Header stylings */
+header {
+  background-color: var(--darkColor);
+  /* font-size: calc(10px + 2vmin); */
+  color:var(--lightColor);
+  z-index: 2;
+  font-size: 130%;
+  position:sticky;
+  top: 0;
+}
+.header-wrapper{
+  margin: auto;
+  max-width: 2300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.header-logo {
+  width: 100px;
+  height: 90px;
+  pointer-events: none;
+}
+
+nav, .leftSide{
+  display: flex;
+  flex-direction: row;
+}
+header a:hover, details:hover, header button:active, header button:hover{
+  color: var(--hoverOrange);
+}
+nav details{
+  z-index: 3;
+}
+nav .dropdown-list{
+  position: absolute;
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  width: auto;
+  /* box-shadow: rgb(41, 41, 41) 2px solid; */
+}
+.dropdown-list a:hover{
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+}
+
+/* Mobile screen */
+@media only screen and (max-width: 1000px) 
+{
+    nav{
+      /* visibility: hidden; */
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      background-color: #121212;
+    }
+    nav .dropdown-list{
+      position: relative;
+    }
+}
